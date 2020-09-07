@@ -22,14 +22,8 @@ public class Ornek_AmazonKayitSayfasi extends TestBase {//day14 6 eylul 2020 paz
 
 }
 
-@Test
-       public void test2() {
-        driver.get("http://www.amazon.com");
-        WebElement accountButonu= driver.findElement(By.id("nav-link-accountList"));
-        Actions actions=new Actions(driver);
-        actions.moveToElement(accountButonu).perform();
-        WebElement clickHere=driver.findElement(By.partialLinkText("Start here"));
-        clickHere.click();
+        @Test (dependsOnMethods = "test01")
+        public void test2() {
         WebElement yourName= driver.findElement(By.id("ap_customer_name"));
         yourName.sendKeys("Fatih Ustunyer");
         WebElement email= driver.findElement(By.id("ap_email"));

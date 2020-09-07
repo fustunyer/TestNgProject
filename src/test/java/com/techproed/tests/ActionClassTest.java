@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import javax.swing.*;
+
 
 public class ActionClassTest extends TestBase {
 
@@ -51,7 +51,33 @@ public class ActionClassTest extends TestBase {
             e.printStackTrace();
         }
         actions.sendKeys(Keys.PAGE_UP).perform();
+        actions.sendKeys(Keys.ARROW_UP);
     }
+    @Test
+    public void buyukKucukYazisi(){
+        //MERHABA nasilsiniz LIVE channel
+        driver.get("http://www.google.com");
+        WebElement aramaKutusu= driver.findElement(By.name("q"));
+        //aramaKutusu.sendKeys("merhaba nasilsiniz live channel");
+        //aramaKutusu.sendKeys(Keys.SHIFT+"merhaba nasilsiniz?");
+        Actions actions=new Actions(driver);
+        actions.moveToElement(aramaKutusu).click()
+                    .keyDown(Keys.SHIFT)
+                    .sendKeys("merhaba")
+                    .keyUp(Keys.SHIFT)
+                    .sendKeys("nasilsiniz")
+                    .perform();
+
+    }
+    @Test
+    public void dragAndDrop(){//surukle birak
+        driver.get("http://www.google.com");
+        WebElement aramaKutusu= driver.findElement(By.name("q"));
+        WebElement logo= driver.findElement(By.id("hplogo"));
+        Actions actions=new Actions(driver);
+        //logo webelemwntini aaramakutusuna tasin
+        actions.dragAndDrop(logo,aramaKutusu).perform();
+ }
 
 
 }
