@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import java.util.List;
 public class WebTablesTest extends TestBase {
+
     public void giris(){
         driver.get("http://www.fhctrip-qa.com/admin/HotelRoomAdmin");
         driver.findElement(By.id("UserName")).sendKeys("manager2");
