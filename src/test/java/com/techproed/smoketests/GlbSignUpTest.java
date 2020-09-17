@@ -4,10 +4,20 @@ import com.techproed.pages.GlbSignUpPage;
 import com.techproed.utilities.ConfigurationReader;
 import com.techproed.utilities.Driver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class GlbSignUpTest {
-    @Test
+    @BeforeSuite
+    public void beforSuite(){
+        System.out.println("beforSuite calisti");
+    }
+    @BeforeTest
+    public void beforeTest(){
+        System.out.println("beforeTest calisti");
+    }
+    @Test(groups = "glbtrader")
     public void test() throws InterruptedException {
         Driver.getDriver().get(ConfigurationReader.getProperty("glbUrl"));
         GlbSignUpPage glbSignUpPage=new GlbSignUpPage();
