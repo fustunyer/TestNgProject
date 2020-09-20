@@ -27,7 +27,7 @@ public class GoogleAramaTest extends TestBaseFinal {
         extentTest.info("tüm linkleri karşılaştır.");
         boolean linkVarMi = false;
         for(WebElement w : googleAramaPage.tumLinkler){
-            if(w.getText().contains("techproeducation123.com")){
+            if(w.getText().contains("techproeducation.com")){
                 linkVarMi = true;
                 break;
             }
